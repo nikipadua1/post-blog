@@ -1,26 +1,31 @@
 "use client"
 
 import { Header } from "./components/Header";
-import { UserProvider } from "./context/userLoggedContext";
+import { UserProvider } from "./context/UserLoggedContext";
 import { Footer } from "./components/Footer";
-import { PostContextProvider } from "./context/postsContext";
+import { PostContextProvider } from "./context/PostsContext";
 import { PostList } from "./components/PostList";
 import { Posts } from "./components/Posts";
+import { ThemeProvider } from "./context/ThemeContext";
+import { Container } from "./components/Container";
+import { ThemeSwitch } from "./components/ThemeSwitch";
 
 
 
 export const Page = () => {
     return(
-        <PostContextProvider>
-            <div className="container mx-auto w-full h-screen">
-                <UserProvider>
-                    <Header/>
-                </UserProvider>
-                <Posts/>
-                <PostList/>
-                <Footer />
-            </div>
-        </PostContextProvider>
+        <ThemeProvider>
+            <PostContextProvider>
+                <Container>
+                    <UserProvider>
+                        <Header/>
+                    </UserProvider>
+                    <Posts/>
+                    <PostList/>
+                    <Footer />
+                </Container>
+            </PostContextProvider>
+        </ThemeProvider>
     )
 }
 

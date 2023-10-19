@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import { userContext } from '../context/userLoggedContext';
-import { PostContext } from '../context/postsContext';
+import { userContext } from '../context/UserLoggedContext';
+import { PostContext } from '../context/PostsContext';
 
 
 export const Footer = () => {
